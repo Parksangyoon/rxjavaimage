@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">rxjava</string>
+
+    <string name="bitsound.label">Bitsound</string>
+    <string name="bitsound.repeat_init">Bitsound::init (repeat)</string>
+    <string name="bitsound.mic_permission">Bitsound::micPermission</string>
+    <string name="bitsound.check_and_init">Bitsound::checkAndInit</string>
+    <string name="bitsound.init">Bitsound::init</string>
+    <string name="bitsound.release">Bitsound::release</string>
+
+    <!-- BitsoundReceiver -->
+    <string name="bitsound.receiver.label">BitsoundReceiver</string>
+    <string name="bitsound.receiver.repeat">BitsoundReceiver::repeatDetection</string>
+    <string name="bitsound.receiver.start">BitsoundReceiver::startDetection</string>
+    <string name="bitsound.receiver.stop">BitsoundReceiver::stopDetection</string>
+
+    <!-- BitsoundShaking -->
+    <string name="bitsound.shaking.label">BitsoundShaking</string>
+    <string name="bitsound.shaking.repeat">BitsoundShaking::repeat</string>
+    <string name="bitsound.shaking.enable">BitsoundShaking::enable</string>
+    <string name="bitsound.shaking.disable">BitsoundShaking::disable</string>
+
+    <!-- BitsoundSmartOn -->
+    <string name="bitsound.smarton.label">BitsoundSmartOn</string>
+    <string name="bitsound.smarton.repeat">BitsoundSmartOn::start (repeat)</string>
+    <string name="bitsound.smarton.repeat.running">Repeating BitsoundSmartOn…</string>
+    <string name="bitsound.smarton.repeat.button.positive">Start</string>
+    <string name="bitsound.smarton.repeat.button.negative">Stop</string>
+    <string name="bitsound.smarton.repeat.interval.label">Interval</string>
+    <string name="bitsound.smarton.repeat.interval.hint">Interval in Seconds</string>
+    <string name="bitsound.smarton.repeat.interval.postfix">seconds</string>
+    <string name="bitsound.smarton.start.10sec_later">BitsoundSmartOn::start 10sec later</string>
+    <string name="bitsound.smarton.start">BitsoundSmartOn::start</string>
+    <string name="bitsound.smarton.stop">BitsoundSmartOn::stop</string>
+
+    <!-- Miscellaneous -->
+    <string name="misc.label">Misc : </string>
+    <string name="misc.get_scheduled_contents.repeat">Get Scheduled Contents (repeat)</string>
+    <string name="misc.get_scheduled_contents">Get Scheduled Contents</string>
+    <string name="misc.send_custom_log.repeat">Custom Log (repeat)</string>
+    <string name="misc.send_custom_log">Custom Log</string>
+
+    <!-- Menu -->
+    <string name="menu.clear_text_log">Clear Text Log</string>
+    <string name="menu.contents_assistant">contents assistant</string>
+    <string name="menu.clear_app_data">Clear App Data</string>
+    <string name="menu.datetime_setting">DateTime Setting</string>
+    <string name="menu.start_smarton_test_service">Start SmartOn Test Service</string>
+
+    <!-- Toolbar -->
+    <string name="toolbar.bitsound.not_initialized">Not Initialized</string>
+    <string name="toolbar.bitsound.initialized">Initialized</string>
+    <string name="toolbar.bitsound.released">Released</string>
+
+    <!-- Exception -->
+    <string name="exception.bundle_is_null">Bundle is empty(null)</string>
+
+    <!-- Permission -->
+    <string name="permission.mic.granted">마이크 권한 허용</string>
+    <string name="permission.mic.denied">마이크 권한 거부</string>
+</resources>

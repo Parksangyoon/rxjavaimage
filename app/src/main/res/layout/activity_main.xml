@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_orange_light"
+    android:keepScreenOn="true"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Button" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="30sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="165dp"
+        android:layout_marginTop="200dp">
+
+        <ImageView
+            android:id="@+id/imblue"
+            android:layout_width="@dimen/unit_7x"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="@dimen/unit_1x"
+            android:src="@drawable/ic_repeat_white_24dp" />
+
+        <ImageView
+            android:id="@+id/imgrey"
+            android:layout_width="@dimen/unit_7x"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/imblue"
+            android:clickable="true"
+            android:contentDescription="@string/bitsound.mic_permission"
+            android:focusable="true"
+            android:padding="@dimen/unit_1x"
+            android:src="@drawable/ic_mic_white_24dp" />
+
+        <ImageView
+            android:id="@+id/imgrey2"
+            android:layout_width="@dimen/unit_7x"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/imgrey"
+            android:clickable="true"
+            android:contentDescription="@string/bitsound.check_and_init"
+            android:focusable="true"
+            android:padding="@dimen/unit_1x"
+            android:src="@drawable/ic_check_white_24dp" />
+
+        <ImageView
+            android:id="@+id/imgreen"
+            android:layout_width="@dimen/unit_7x"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/imgrey2"
+            android:clickable="true"
+            android:contentDescription="@string/bitsound.init"
+            android:focusable="true"
+            android:padding="@dimen/unit_1x"
+            android:src="@drawable/ic_play_arrow_white_24dp" />
+
+        <ImageView
+            android:id="@+id/imred"
+            android:layout_width="@dimen/unit_7x"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentRight="false"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/imgreen"
+            android:clickable="true"
+            android:contentDescription="@string/bitsound.release"
+            android:focusable="true"
+            android:padding="@dimen/unit_1x"
+            android:src="@drawable/ic_pause_white_24dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>
