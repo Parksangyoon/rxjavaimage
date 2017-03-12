@@ -33,17 +33,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(MainActivity.this);
 
-        imred= (ImageView)findViewById(R.id.imred);
-        imblue = (ImageView)findViewById(R.id.imblue);
-
         imgdata picture = new imgdata();
         imgdata current = new imgdata();
 
-        Observable<imgdata> im1 = RxView.clicks(findViewById(R.id.imred)) //RxView 를 쓰기 위해선 compile 'com.jakewharton.rxbinding:rxbinding:0.3.0'
-                .map(event -> picture.setdata(R.drawable.ic_pause_white_24dp,RED,imred));
-        Observable<imgdata> im2 = RxView.clicks(findViewById(R.id.imblue))
-                .map(event -> picture.setdata(R.drawable.ic_repeat_white_24dp,BLUE,imblue));
-        Observable<imgdata> together = Observable.merge(im1, im2);
+
+        Picasso.with(this).load(R.drawable.ic_repeat_white_24dp).transform(new ColorFilterTransformation(WHITE)).into((ImageView)findViewById(R.id.imblue));
+
+        Observable<imgdata> im1 = RxView.clicks(findViewById(R.id.imblue)) //RxView 를 쓰기 위해선 compile 'com.jakewharton.rxbinding:rxbinding:0.3.0'
+                .map(event -> picture.setdata(R.drawable.ic_repeat_white_24dp,BLUE,(ImageView)findViewById(R.id.imblue)));
+        Observable<imgdata> im2 = RxView.clicks(findViewById(R.id.imgrey))
+                .map(event -> picture.setdata(R.drawable.ic_mic_white_24dp,GREY,(ImageView)findViewById(R.id.imgrey)));
+        Observable<imgdata> im3 = RxView.clicks(findViewById(R.id.imgrey2))
+                .map(event -> picture.setdata(R.drawable.ic_check_white_24dp,GREY,(ImageView)findViewById(R.id.imgrey2)));
+        Observable<imgdata> im4 = RxView.clicks(findViewById(R.id.imgreen))
+                .map(event -> picture.setdata(R.drawable.ic_play_arrow_white_24dp,GREEN,(ImageView)findViewById(R.id.imgreen)));
+        Observable<imgdata> im5 = RxView.clicks(findViewById(R.id.imred))
+                .map(event -> picture.setdata(R.drawable.ic_pause_white_24dp,RED,(ImageView)findViewById(R.id.imred)));
+
+        Observable<imgdata> together = Observable.merge(im1, im2,im3,im4,im5);
 
 //        together.subscribe(data ->
   //              Picasso.with(this).load(data.draw).transform(new ColorFilterTransformation(data.color)).into(data.im));
