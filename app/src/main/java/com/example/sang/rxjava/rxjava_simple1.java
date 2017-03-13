@@ -1,45 +1,47 @@
 package com.example.sang.rxjava;
 
-import android.widget.TextView;
+import android.content.Context;
+import android.content.Intent;
+import android.view.View;
+import android.widget.ImageView;
 
+import butterknife.BindColor;
+import jp.wasabeef.picasso.transformations.ColorFilterTransformation;
 import rx.Observable;
-import rx.Subscriber;
-import rx.functions.Action0;
-import rx.functions.Action1;
-import com.example.sang.*;
+import com.jakewharton.rxbinding.view.RxView;
+import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+
 /**
  * Created by sang on 2017-03-12.
  */
 
 public class rxjava_simple1 {
-    private static final String TAG = MainActivity.class.getName();
-    public void rx(){
-        Observable<String> simpleObservable =
-                Observable.create(new Observable.OnSubscribe<String>() {
-                    @Override
-                    public void call(Subscriber<? super String> subscriber) {
-                        subscriber.onNext("Hello RxAndroid 1234455!!");
-                        subscriber.onCompleted();
-                    }
-                });
+    imgdata picture = new imgdata();
+    imgdata current = new imgdata();
 
-        simpleObservable
-                .subscribe(new Action1<String>() {
-                    @Override
-                    public void call(String text) {
-                    }
-                }, new Action1<Throwable>() {
-                    @Override
-                    public void call(Throwable throwable) {
+    @BindColor(R.color.white) protected int WHITE;
 
-                    }
-                }, new Action0() {
-                    @Override
-                    public void call() {
 
-                    }
-                });
+    ArrayList<Observable<imgdata>> imlist = new ArrayList<>();
 
+
+    public void setinit(int color,View v) {
+        imlist.add(RxView.clicks(v)
+                .map(event -> picture.setdata(color,(ImageView)v)));
     }
 
+    public void setsub(){
+        Observable<imgdata> together = Observable.merge(imlist.get(0), imlist.get(1),imlist.get(2),imlist.get(3)
+                ,imlist.get(4));
+
+        together.subscribe(data -> {
+            if(current.color != -99)
+                (current.im).setColorFilter(WHITE);
+            current.setdata(data.color,data.im);
+            (picture.im).setColorFilter(picture.color);}
+        );
+
+    }
 }
